@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Home } from "../components/Home"
+---
+
+<Layout title="@lift-html/svelte demo">
+  <main>
+    <h1>Demo for @lift-html/svelte</h1>
+    <p>Welcome to the page, it's rendered with static markup. And the stuff you see below is actually coming from `home.tsx` React component. Because we use Astro React will only run on the server (or at build time) and will not send anything to your users browsers.</p>
+    <p>You can make some part of that static markup interactive by inserting Svelte islands or Svelte web components (like in <a href="https://www.youtube.com/watch?v=rFP7rUYtOOg">FKIT stack</a>), but that approach only goes so far.</p>
+    <h2>lift-html is built to Lift existing HTML by using Svelte Runes</h2>
+    <div class="card">
+      <Home />
+      <script>import "../components/counter.svelte"</script>
+    </div>
+    <a href="/" class="back-link">Go to About</a>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .back-link {
+    color: rgb(var(--accent-light));
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2rem;
+  }
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  a, a:hover {
+    color: white;
+  }
+  .card {
+    background: #23262d;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+  }
+</style>
