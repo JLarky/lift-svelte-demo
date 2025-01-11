@@ -2,7 +2,7 @@
   import { liftSvelte } from '@lift-html/svelte';
   import { findTarget } from '@lift-html/incentive';
 
-  liftSvelte('my-counter', {
+  const MyCounter = liftSvelte('my-counter', {
     init(onCleanup) {
       // use incentive to get referenced to existing HTML elements
       const valueEl = findTarget(this, 'value');
@@ -26,4 +26,10 @@
       decrementBtn.addEventListener('click', () => count--, { signal });
     }
   });
+
+  declare module "@lift-html/core" {
+    interface KnownElements {
+      'my-counter': typeof MyCounter
+    }
+  }
 </script>
