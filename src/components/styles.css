@@ -1,0 +1,33 @@
+.counter-display {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.counter-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.counter-button {
+  width: 3rem;
+  height: 3rem;
+  background-color: #3a3a3a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.counter-button:hover {
+  background-color: #4a4a4a;
+}
+
+.counter-button:active {
+  transform: translateY(1px);
+}
