@@ -5,16 +5,24 @@ export function Home() {
     <main>
       <h3>I'm rendered by React</h3>
       <my-counter>
-        <div class="counter-wrapper">
-          <div class="counter-display">
+        <div className="counter-wrapper">
+          <div className="counter-display">
             <span>Count: </span>
             <span data-target="my-counter:value">0</span>
           </div>
-          <div class="counter-controls">
-            <button data-target="my-counter:decrement" class="counter-button">
+          <div className="counter-controls">
+            <button
+              type="button"
+              data-target="my-counter:decrement"
+              className="counter-button"
+            >
               -
             </button>
-            <button data-target="my-counter:increment" class="counter-button">
+            <button
+              type="button"
+              data-target="my-counter:increment"
+              className="counter-button"
+            >
               +
             </button>
           </div>
